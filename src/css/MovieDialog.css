@@ -1,0 +1,117 @@
+/* MovieDialog.css */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.dialog-content {
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.dialog-close:hover {
+  color: white;
+  background-color: #333;
+}
+
+.dialog-poster {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.dialog-info {
+  text-align: left;
+}
+
+.dialog-info h2 {
+  margin: 0 0 1.5rem 0;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.dialog-info p {
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.dialog-info strong {
+  color: #e50914;
+  font-weight: 500;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 639px) {
+  .dialog-overlay {
+    padding: 0.5rem;
+  }
+  
+  .dialog-content {
+    padding: 1.5rem;
+    max-height: 95vh;
+  }
+  
+  .dialog-poster {
+    width: 200px;
+    margin-bottom: 1rem;
+  }
+  
+  .dialog-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dialog-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+}

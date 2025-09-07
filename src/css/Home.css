@@ -1,0 +1,115 @@
+.home {
+  padding: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-form {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #666;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #e50914;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.search-button:hover {
+  background-color: #f40612;
+}
+
+
+@media (max-width: 639px) {
+  .home {
+    padding: 1rem 0;
+  }
+
+  .search-form {
+    margin-bottom: 1rem;
+  }
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Rating indicator styles */
+.rating-indicator {
+  display: inline-flex; /* Arrange items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 5px; /* Space between dot, number, and text */
+  font-size: 12px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.rating-dot {
+  width: 8px; /* Small circular dot */
+  height: 8px;
+  border-radius: 50%; /* Make it circular */
+}
+
+/* Color classes based on rating */
+.rating-red { background-color: #ef4444; } /* Red for poor movies */
+.rating-yellow { background-color: #eab308; } /* Yellow for average */
+.rating-green { background-color: #22c55e; } /* Green for good movies */
+
+/* Recommendations section styling */
+.recommendations-section {
+  margin-bottom: 30px; /* Space before main grid */
+  padding: 0 20px; /* Side padding */
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d); /* Dark gradient */
+  padding: 20px; /* Inner padding */
+  border-radius: 8px; /* Rounded corners */
+  margin: 20px 0; /* Vertical margin */
+}
+
+.recommendations-section .slider-title {
+  font-size: 24px; /* Larger title for prominence */
+  color: #fff; /* White text */
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center; /* Align star emoji with text */
+  gap: 8px; /* Space between emoji and text */
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .recommendations-section {
+    margin: 10px 0; /* Less margin on mobile */
+    padding: 15px; /* Less padding on mobile */
+  }
+  
+  .recommendations-section .slider-title {
+    font-size: 20px; /* Smaller title on mobile */
+  }
+}

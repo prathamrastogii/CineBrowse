@@ -1,0 +1,118 @@
+/* MovieSlider.css - Netflix-style slider styles */
+
+.movie-slider {
+  margin-bottom: 30px; /* Space between different sliders */
+  padding: 0 20px; /* Side padding for mobile */
+}
+
+/* Header section with title and colored indicator */
+.slider-header {
+  display: flex;
+  align-items: center; /* Align dot and title vertically */
+  gap: 10px; /* Space between dot and title */
+  margin-bottom: 15px;
+}
+
+.slider-indicator {
+  width: 12px; /* Colored dot size */
+  height: 12px;
+  border-radius: 50%; /* Make it circular */
+}
+
+/* Color classes for different rating categories */
+.slider-indicator.green { background-color: #22c55e; } /* Good movies */
+.slider-indicator.yellow { background-color: #eab308; } /* Average movies */
+.slider-indicator.red { background-color: #ef4444; } /* Poor movies */
+
+.slider-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff; /* White text for dark theme */
+  margin: 0;
+}
+
+/* Container for the entire slider including buttons */
+.slider-container {
+  position: relative; /* Needed for absolute positioned buttons */
+}
+
+/* Scrollable track containing movie cards */
+.slider-track {
+  display: flex; /* Arrange movie cards horizontally */
+  gap: 15px; /* Space between movie cards */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap to cards when scrolling */
+  padding: 10px 0; /* Vertical padding */
+  scrollbar-width: none; /* Hide scrollbar on Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar on IE/Edge */
+}
+
+/* Hide scrollbar on Webkit browsers (Chrome, Safari) */
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual movie item in slider */
+.slider-item {
+  flex: 0 0 150px; /* Fixed width, don't grow/shrink */
+  scroll-snap-align: start; /* Snap alignment */
+}
+
+/* Scroll buttons (left and right arrows) */
+.scroll-btn {
+  position: absolute; /* Position over the slider */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for exact center */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Circular buttons */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10; /* Appear above movie cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s; /* Smooth hover effect */
+}
+
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.9); /* Darker on hover */
+}
+
+/* Position left button */
+.scroll-left {
+  left: -20px;
+}
+
+/* Position right button */
+.scroll-right {
+  right: -20px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .movie-slider {
+    padding: 0 10px; /* Less padding on mobile */
+  }
+  
+  .slider-item {
+    flex: 0 0 120px; /* Smaller cards on mobile */
+  }
+  
+  .scroll-btn {
+    width: 35px; /* Smaller buttons on mobile */
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  .scroll-left {
+    left: -15px; /* Closer to edge on mobile */
+  }
+  
+  .scroll-right {
+    right: -15px;
+  }
+}
